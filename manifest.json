@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Gallery",
+    "version": "1.0.0",
+    "description": "gallery show us and summon recall...",
+
+    "icons": {
+        "16": "resource/icons/gallery_16.png",
+        "48": "resource/icons/gallery_48.png"
+    },
+
+    "app": {
+        "background": {
+            "scripts":
+                [
+                    "scripts/background/background.js"
+                ]
+        }
+    },
+
+    "permissions":
+    [
+        "fullscreen", "alwaysOnTopWindows"
+    ]
+}

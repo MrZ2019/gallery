@@ -1,0 +1,62 @@
+
+
+/**
+* @author: shadow
+* @filename: 
+*/
+
+#head h1 {
+	text-align: center;
+
+	background: teal;
+	color: white;
+}
+
+#main {
+	#background: azure;
+	text-align: center;
+	
+	height: 80%;
+
+	margin: auto;
+	text-align: center;
+
+	min-height: 64px;
+}
+
+
+
+#footer {
+	text-align: right;
+	font-size: 14px;
+
+	font-style:italic;
+}
+
+body {
+	background: black;
+
+	-webkit-app-region: drag;
+}
+
+/* add transition */
+
+#main #image-box {
+	transition: opacity 5s;
+
+	height: 100%;
+}
+
+#img-title {
+	font-size:normal;
+	color: gray;
+
+	position: absolute;
+	top: 4px;
+	margin: auto;
+}
+
+#img-title:hover {
+	background: black;
+}
+
