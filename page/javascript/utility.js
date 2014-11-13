@@ -19,7 +19,7 @@ function fnReadImageData(index) {
             setImageBox(null, null);
 
             // start play photo!
-            startPhotoShow(null, appConfig.show_interval + appConfig.fade_time);
+            startPhotoShow(null, (timeList[index] || appConfig.show_interval) + appConfig.fade_time);
         }
     });
 }

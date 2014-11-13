@@ -84,6 +84,11 @@ var posList =
         height: 140
     }
 };
+
+var timeList = 
+{
+    "0": 4000
+};
 /*
 var posList =
 {
