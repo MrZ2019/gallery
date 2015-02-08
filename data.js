@@ -15,7 +15,8 @@ var imgDataMap =
     7: "january.json",
     8: "cartoon.json",
     9: "heroes.json",
-    "a": "04.json"
+    "a": "04.json",
+    "b":  "0501.json"
 };
 
 var imageDatas, dirIndexList;

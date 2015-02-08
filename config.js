@@ -6,7 +6,7 @@
 var appConfig = {
     "imagesFolderPrefix": "../resource/images/",
 
-    "show_interval": 300,
+    "show_interval": 600,
     "min_interval": 200,
     "fade_time": 0,
     "interval_unit": 500,
@@ -87,7 +87,8 @@ var posList =
 
 var timeList = 
 {
-    "0": 4000
+    "0": 4000,
+    "1": 6000
 };
 /*
 var posList =
