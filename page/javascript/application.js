@@ -19,6 +19,13 @@ $(document).ready(function() {
 
     imageBox.on("load", function() {
         $(this).show();
+        if (this.width > this.height) {
+          $(this).addClass('full-width')
+          $(this).removeClass('full-height')
+        } else {
+          $(this).addClass('full-height')
+          $(this).removeClass('full-width')
+        }
     })
     var initIndex;
     if(appConfig.initialMode == "fix") {
@@ -29,7 +36,14 @@ $(document).ready(function() {
         initIndex = appConfig.randIndex[initIndex];
     }
     fnReadImageData(initIndex);
-    _win.setBounds(posList[initIndex.toString()]);
+    var bound;
+    if(appConfig.singleMode) {
+        bound = posList['single'];
+    }
+    else {
+        bound = posList[initIndex.toString()];
+    }
+    _win.setBounds(bound);
     window.addEventListener("keydown", function(event) {
 
         var keyCode = event.keyCode,
@@ -41,7 +55,21 @@ $(document).ready(function() {
             return;
         }
 
-       
+        if(event.keyCode == 32) {
+
+            if(appStatus.galleryIsRunning) {
+                stopShow();
+                $('body').addClass('pause');
+            }
+            else {
+                startPhotoShow(null,appConfig.show_interval);
+                setImageBox(null, null);
+                $('body').removeClass('pause');
+            }
+            return;
+        }
+
+
         if(keyCode == plusCode) {
             appConfig.show_interval += appConfig.interval_unit;
         }
@@ -115,6 +143,10 @@ $(document).ready(function() {
 
         var keyCode = e.keyCode;
         var charCode = String.fromCharCode(keyCode);
+
+        if(charCode == ' ') {
+            return;
+        }
         fnReadImageData(charCode);
     });
 });

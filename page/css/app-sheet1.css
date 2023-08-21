@@ -2,7 +2,7 @@
 
 /**
 * @author: shadow
-* @filename: 
+* @filename:
 */
 
 #head h1 {
@@ -11,8 +11,15 @@
 	background: teal;
 	color: white;
 }
+
+
+.pause #img-title {
+    font-style: italic;
+    color: white;
+}
+
 body {
-	position: fixed;	
+	position: fixed;
 	height: 100%;
 	width: 100%;
 	margin: 0px;
@@ -20,7 +27,7 @@ body {
 #main {
 	#background: azure;
 	text-align: center;
-	
+
 	height: 100%;
 	width: 100%;
 	display: table-cell;
@@ -31,6 +38,7 @@ body {
 	text-align: center;
 
 	min-height: 64px;
+	display: flex;
 }
 
 
@@ -43,29 +51,40 @@ body {
 }
 
 body {
-	background: black;
+	background: transparent;
 
-	-webkit-app-region: drag;
+
 }
 
 /* add transition */
 
 #main #image-box {
 	transition: opacity 5s;
-	height: 100%;
 	margin: auto;
+	-webkit-app-region: drag;
 }
 
+#image-box.full-height {
+		height: 100%;
+}
+#image-box.full-width {
+		width: 100%;
+}
 #img-title {
 	font-size:normal;
 	color: gray;
 
 	position: absolute;
-	top: 4px;
+	z-index: 10;
+	top: 0px;
+	color: #fff;
+	opacity: .5;
+	text-align: center;
 	margin: auto;
+	width: 100%;
 }
 
 #img-title:hover {
-	background: black;
+	opacity: 1;
+	background: orange;
 }
-

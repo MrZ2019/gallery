@@ -6,7 +6,7 @@
 var appConfig = {
     "imagesFolderPrefix": "../resource/images/",
 
-    "show_interval": 600,
+    "show_interval": 10000,
     "min_interval": 200,
     "fade_time": 0,
     "interval_unit": 500,
@@ -15,7 +15,9 @@ var appConfig = {
     "resourceDir": "../resource/",
     "defaultImageIndex": 4,
     "windowCount": 5,
-    "randIndex": ["a", 5, 6 ,7, 1,4,8,9,0]
+    "randIndex": ["a", "b"],
+    singleMode: true,
+    randMode: false
 };
 var hScreen = window.screen.height;
 var wScreen = window.screen.width;
@@ -23,13 +25,19 @@ var wScreen = window.screen.width;
 /* v2 -------- */
 var posList =
 {
+    'single': {
+        left: 0,
+        top: 325,
+        width: 200,
+        height: 200
+    },
     "a": {
         left: 0,
         top: 5,
         width: 140,
         height: 140
     },
-    "1": {
+    "b": {
         left: 300,
         top: 5,
         width: 140,
@@ -85,7 +93,7 @@ var posList =
     }
 };
 
-var timeList = 
+var timeList =
 {
     "0": 4000,
     "1": 6000
