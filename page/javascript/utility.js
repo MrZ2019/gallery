@@ -23,6 +23,8 @@ function fnReadImageData(index) {
         }
     });
 }
+
+var index1 = 0;
 function setImageBox(folderName, index, fadeTime) {
 
     if(folderName == null) {
@@ -35,7 +37,18 @@ function setImageBox(folderName, index, fadeTime) {
 
     var folderList = imageDatas[folderName].list;
     if(index == null) {
-        index = rand_int(folderList.length -1);
+
+        if (appConfig.randMode) {
+
+            index = rand_int(folderList.length -1);
+        } else {
+            index = index1;
+            index1++;
+
+            if (index1 > folderList.length - 1) {
+                index1 = 0;
+            }
+        }
 
         if(index < 0) {
             return;

@@ -11,6 +11,13 @@
 	background: teal;
 	color: white;
 }
+
+
+.pause #img-title {
+    font-style: italic;
+    color: white;
+}
+
 body {
 	position: fixed;	
 	height: 100%;
@@ -43,9 +50,9 @@ body {
 }
 
 body {
-	background: black;
+	background: transparent;
 
-	-webkit-app-region: drag;
+	
 }
 
 /* add transition */
@@ -54,6 +61,7 @@ body {
 	transition: opacity 5s;
 	height: 100%;
 	margin: auto;
+	-webkit-app-region: drag;
 }
 
 #img-title {
@@ -61,11 +69,17 @@ body {
 	color: gray;
 
 	position: absolute;
-	top: 4px;
+	z-index: 10;
+	top: 0px;
+	color: #fff;
+	opacity: .5;
+	text-align: center;
 	margin: auto;
+	width: 100%;
 }
 
 #img-title:hover {
-	background: black;
+	opacity: 1;
+	background: orange;
 }
 

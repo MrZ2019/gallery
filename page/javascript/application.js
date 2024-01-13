@@ -29,7 +29,14 @@ $(document).ready(function() {
         initIndex = appConfig.randIndex[initIndex];
     }
     fnReadImageData(initIndex);
-    _win.setBounds(posList[initIndex.toString()]);
+    var bound;
+    if(appConfig.singleMode) {
+        bound = posList['single'];
+    }
+    else {
+        bound = posList[initIndex.toString()];
+    }
+    _win.setBounds(bound);
     window.addEventListener("keydown", function(event) {
 
         var keyCode = event.keyCode,
@@ -38,6 +45,20 @@ $(document).ready(function() {
             minusCode = 109;
         if(event.ctrlKey) {
             fnReadImageData();
+            return;
+        }
+        
+        if(event.keyCode == 32) {
+            
+            if(appStatus.galleryIsRunning) {
+                stopShow();
+                $('body').addClass('pause');
+            }
+            else {
+                startPhotoShow(null,appConfig.show_interval);
+                setImageBox(null, null);
+                $('body').removeClass('pause');
+            }
             return;
         }
 
@@ -112,9 +133,13 @@ $(document).ready(function() {
     window.addEventListener("keypress", function(e) {
 
          // change image json!
-
+        
         var keyCode = e.keyCode;
         var charCode = String.fromCharCode(keyCode);
+        
+        if(charCode == ' ') {
+            return;
+        }
         fnReadImageData(charCode);
     });
 });

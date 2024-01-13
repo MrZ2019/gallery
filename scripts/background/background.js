@@ -8,7 +8,7 @@
 chrome.app.runtime.onLaunched.addListener(
     function() {
 
-        for(var index = 0; index < 5; index++) {
+        for(var index = 0; index < 1; index++) {
             // create a window
 
             appWin = chrome.app.window.create("page/window.html",
